@@ -4,7 +4,7 @@ using ZIT.Communication.Comm.Communication.Messages;
 using ZIT.Communication.Comm.Communication.Channels;
 using ZIT.Communication.Comm.Communication.Protocols;
 using ZIT.Threading;
-using ZIT.LOG;
+
 
 namespace ZIT.Communication.Comm.Client
 {   

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace ZIT.EMERGENCY.Controller
+namespace ZIT.LBSExtend.Controller
 {
     /// <summary>
     /// Stores message to be used by an event.

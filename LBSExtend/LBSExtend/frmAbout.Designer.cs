@@ -1,4 +1,6 @@
-﻿namespace ZIT.EMERGENCY.UI
+﻿using ZIT.LBSExtend.Utility;
+
+namespace ZIT.LBSExtend.UI
 {
     partial class frmAbout
     {
@@ -41,7 +43,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(341, 12);
             this.label1.TabIndex = 0;
-            this.label1.Text = "版权所有2016 南京中兴维先信息技术有限公司 保留所有权利。";
+            this.label1.Text = "版权所有2017 南京中兴维先信息技术有限公司 保留所有权利。";
             // 
             // label2
             // 
@@ -56,9 +58,9 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(59, 46);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(209, 12);
+            this.label3.Size = new System.Drawing.Size(161, 12);
             this.label3.TabIndex = 2;
-            this.label3.Text = "中兴120急救指挥调度系统-远盟客户端";
+            this.label3.Text = "";
             // 
             // frmAbout
             // 
@@ -72,7 +74,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmAbout";
-            this.Text = "关于远盟客户端";
+            this.Text = "";
             this.ResumeLayout(false);
             this.PerformLayout();
 

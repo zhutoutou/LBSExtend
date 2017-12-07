@@ -4,12 +4,10 @@ using System.Windows.Forms;
 using System.Threading;
 using System.Diagnostics;
 using System.IO;
-using ZIT.EMERGENCY.Controller;
-using ZIT.LOG;
-using ZIT.EMERGENCY.Model;
-using ZIT.EMERGENCY.Utility;
+using ZIT.LBSExtend.Controller;
+using ZIT.LBSExtend.Utility;
 
-namespace ZIT.EMERGENCY.UI
+namespace ZIT.LBSExtend.UI
 {
     public partial class MainUI : Form
     {
@@ -24,6 +22,7 @@ namespace ZIT.EMERGENCY.UI
         public MainUI()
         {
             InitializeComponent();
+            this.Text = SysParameters.SoftName;
         }
         /// <summary>
         /// 窗体加载函数
@@ -40,7 +39,7 @@ namespace ZIT.EMERGENCY.UI
             }
             catch (Exception ex)
             {
-                LogHelper.WriteLog("主窗体加载出错", ex);
+                LogUtility.DataLog.WriteLog(LogUtility.LogLevel.Info, ex.Message, new LogUtility.RunningPlace("MainUI", "MainUI_Load"), "业务异常");
             }
 
         }
@@ -54,14 +53,11 @@ namespace ZIT.EMERGENCY.UI
             {
                 CoreService control = CoreService.GetInstance();
                 control.BServerConnectionStatusChanged += BServer_ConnectionStatusChanged;
-                control.DBLConnectStatusChanged += DBL_ConnectionStatusChanged;
-                control.DBRConnectStatusChanged += DBR_ConnectionStatusChanged;
                 control.StartService();
             }
             catch (Exception ex)
             {
-                LogHelper.WriteLog("InitProgram", ex);
-
+                LogUtility.DataLog.WriteLog(LogUtility.LogLevel.Info, ex.Message, new LogUtility.RunningPlace("MainUI", "InitProgram"), "业务异常");
             }
         }
 
@@ -91,53 +87,6 @@ namespace ZIT.EMERGENCY.UI
                 }
             }));
         }
-
-        /// <summary>
-        /// 与数据库连接状态改变事件
-        /// </summary>
-        private void DBL_ConnectionStatusChanged(object sender, StatusEventArgs e)
-        {
-            lblDBLConnectStaus.BeginInvoke(new MethodInvoker(() =>
-            {
-                switch (e.Status)
-                {
-                    case NetStatus.DisConnected:
-                        lblDBLConnectStaus.Text = "断开";
-                        lblDBLConnectStaus.ForeColor = Color.Red;
-                        break;
-                    case NetStatus.Connected:
-                        lblDBLConnectStaus.Text = "已连接";
-                        lblDBLConnectStaus.ForeColor = Color.Green;
-                        break;
-                    default:
-                        break;
-                }
-            }));
-        }
-
-
-        /// <summary>
-        /// 与数据库连接状态改变事件
-        /// </summary>
-        private void DBR_ConnectionStatusChanged(object sender, StatusEventArgs e)
-        {
-            lblDBRConnectStaus.BeginInvoke(new MethodInvoker(() =>
-            {
-                switch (e.Status)
-                {
-                    case NetStatus.DisConnected:
-                        lblDBRConnectStaus.Text = "断开";
-                        lblDBRConnectStaus.ForeColor = Color.Red;
-                        break;
-                    case NetStatus.Connected:
-                        lblDBRConnectStaus.Text = "已连接";
-                        lblDBRConnectStaus.ForeColor = Color.Green;
-                        break;
-                    default:
-                        break;
-                }
-            }));
-        }
         /// <summary>
         /// 窗体关闭事件
         /// </summary>
@@ -161,7 +110,7 @@ namespace ZIT.EMERGENCY.UI
             }
             catch (System.Exception ex)
             {
-                LOG.LogHelper.WriteLog("", ex);
+                LogUtility.DataLog.WriteLog(LogUtility.LogLevel.Info, ex.Message, new LogUtility.RunningPlace("MainUI", "MainUI_FormClosing"), "业务异常");
             }
         }
 
@@ -197,7 +146,7 @@ namespace ZIT.EMERGENCY.UI
             }
             catch (System.Exception ex)
             {
-                LogHelper.WriteLog("", ex);
+                LogUtility.DataLog.WriteLog(LogUtility.LogLevel.Info, ex.Message, new LogUtility.RunningPlace("MainUI", "menuItemExitSystem_Click"), "业务异常");
             }
         }
 

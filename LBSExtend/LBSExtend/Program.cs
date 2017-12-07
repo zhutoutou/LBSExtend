@@ -5,7 +5,7 @@ using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using System.Diagnostics;
 
-namespace ZIT.EMERGENCY.UI
+namespace ZIT.LBSExtend.UI
 {
     static class Program
     {

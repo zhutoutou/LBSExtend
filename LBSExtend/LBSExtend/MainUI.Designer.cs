@@ -1,4 +1,6 @@
-﻿namespace ZIT.EMERGENCY.UI
+﻿using ZIT.LBSExtend.Utility;
+
+namespace ZIT.LBSExtend.UI
 {
     partial class MainUI
     {
@@ -31,8 +33,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainUI));
             this.lblBssConnectStatus = new System.Windows.Forms.Label();
             this.panelStatus = new System.Windows.Forms.Panel();
-            this.lblDBLConnectStaus = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.MenuSystem = new System.Windows.Forms.MenuStrip();
             this.系统ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -42,8 +42,6 @@
             this.menuItemAbout = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
             this.btnTest = new System.Windows.Forms.Button();
-            this.lblDBRConnectStaus = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.panelStatus.SuspendLayout();
             this.MenuSystem.SuspendLayout();
             this.SuspendLayout();
@@ -62,36 +60,12 @@
             // 
             this.panelStatus.AutoSize = true;
             this.panelStatus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.panelStatus.Controls.Add(this.lblDBRConnectStaus);
-            this.panelStatus.Controls.Add(this.label4);
-            this.panelStatus.Controls.Add(this.lblDBLConnectStaus);
-            this.panelStatus.Controls.Add(this.label2);
             this.panelStatus.Controls.Add(this.label6);
             this.panelStatus.Controls.Add(this.lblBssConnectStatus);
             this.panelStatus.Location = new System.Drawing.Point(0, 299);
             this.panelStatus.Name = "panelStatus";
             this.panelStatus.Size = new System.Drawing.Size(637, 43);
             this.panelStatus.TabIndex = 10;
-            // 
-            // lblDBLConnectStaus
-            // 
-            this.lblDBLConnectStaus.AutoSize = true;
-            this.lblDBLConnectStaus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.lblDBLConnectStaus.ForeColor = System.Drawing.Color.Red;
-            this.lblDBLConnectStaus.Location = new System.Drawing.Point(354, 15);
-            this.lblDBLConnectStaus.Name = "lblDBLConnectStaus";
-            this.lblDBLConnectStaus.Size = new System.Drawing.Size(29, 12);
-            this.lblDBLConnectStaus.TabIndex = 4;
-            this.lblDBLConnectStaus.Text = "断开";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(262, 15);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(101, 12);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "本地数据库连接：";
             // 
             // label6
             // 
@@ -170,26 +144,6 @@
             this.btnTest.UseVisualStyleBackColor = true;
             this.btnTest.Click += new System.EventHandler(this.btnTest_Click);
             // 
-            // lblDBRConnectStaus
-            // 
-            this.lblDBRConnectStaus.AutoSize = true;
-            this.lblDBRConnectStaus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.lblDBRConnectStaus.ForeColor = System.Drawing.Color.Red;
-            this.lblDBRConnectStaus.Location = new System.Drawing.Point(555, 15);
-            this.lblDBRConnectStaus.Name = "lblDBRConnectStaus";
-            this.lblDBRConnectStaus.Size = new System.Drawing.Size(29, 12);
-            this.lblDBRConnectStaus.TabIndex = 6;
-            this.lblDBRConnectStaus.Text = "断开";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(460, 15);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(101, 12);
-            this.label4.TabIndex = 5;
-            this.label4.Text = "对方数据库连接：";
-            // 
             // MainUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -205,7 +159,7 @@
             this.MaximumSize = new System.Drawing.Size(650, 381);
             this.MinimumSize = new System.Drawing.Size(650, 381);
             this.Name = "MainUI";
-            this.Text = "卫生局联网服务器";
+            this.Text = "";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainUI_FormClosing);
             this.Load += new System.EventHandler(this.MainUI_Load);
             this.panelStatus.ResumeLayout(false);
@@ -230,10 +184,6 @@
         private System.Windows.Forms.ToolStripMenuItem menuItemAbout;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnTest;
-        private System.Windows.Forms.Label lblDBLConnectStaus;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label lblDBRConnectStaus;
-        private System.Windows.Forms.Label label4;
     }
 }
 

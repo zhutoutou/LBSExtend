@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ZIT.EMERGENCY.Model
+namespace ZIT.LBSExtend.Model
 {
     /// <summary>
     /// 在线的网络单元

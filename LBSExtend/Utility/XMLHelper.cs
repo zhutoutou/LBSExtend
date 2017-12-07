@@ -6,7 +6,7 @@ using System.IO;
 using System.Xml;
 using System.Xml.Serialization;
 
-namespace ZIT.EMERGENCY.Utility
+namespace ZIT.LBSExtend.Utility
 {
     public class XMLHelper
     {

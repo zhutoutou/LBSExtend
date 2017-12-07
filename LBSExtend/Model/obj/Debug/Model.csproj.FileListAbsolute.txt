@@ -1,0 +1,4 @@
+D:\Code\LBSExtend\LBSExtend\Model\bin\Debug\Model.dll
+D:\Code\LBSExtend\LBSExtend\Model\bin\Debug\Model.pdb
+D:\Code\LBSExtend\LBSExtend\Model\obj\Debug\Model.dll
+D:\Code\LBSExtend\LBSExtend\Model\obj\Debug\Model.pdb

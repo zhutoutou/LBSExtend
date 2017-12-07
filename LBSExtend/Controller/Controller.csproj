@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -8,10 +8,11 @@
     <ProjectGuid>{7BB57E03-892A-402F-AF95-BB1293ABF2D3}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ZIT.EMERGENCY.Controller</RootNamespace>
+    <RootNamespace>ZIT.LBSExtend.Controller</RootNamespace>
     <AssemblyName>Controller</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -21,6 +22,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -29,10 +31,11 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="NetHandler">
-      <HintPath>BusinessServer\NetHandler.dll</HintPath>
+    <Reference Include="LogUtility">
+      <HintPath>..\Utility\LogUtility.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -43,30 +46,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataAnalysis\ConnectTestRemote.cs" />
-    <Compile Include="GPSServer\GServer.cs" />
-    <Compile Include="GPSServer\GServerMsgHandler.cs" />
+    <Compile Include="BServer\BSSServer.cs" />
+    <Compile Include="BServer\BSSServerMsgHandler.cs" />
     <Compile Include="CoreService.cs" />
-    <Compile Include="DataAnalysis\ConnectTestLocal.cs" />
-    <Compile Include="DataAnalysis\SendNewInfo.cs" />
     <Compile Include="NetStatus.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StatusEventArgs.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <ProjectReference Include="..\COM\COM.csproj">
-      <Project>{11912480-CCB9-489B-A745-86822A8101EA}</Project>
-      <Name>COM</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\DataAccess\fnDataAccess.csproj">
-      <Project>{F639F7FF-C459-4ED8-B3C7-1396A8B6A62A}</Project>
-      <Name>fnDataAccess</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\LOG\LOG.csproj">
-      <Project>{81326D76-FFD1-4637-BA8C-4CD73A75F196}</Project>
-      <Name>LOG</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Model\Model.csproj">
       <Project>{823E8728-7F58-4FCF-B3AC-33D86B2FABBA}</Project>
       <Name>Model</Name>

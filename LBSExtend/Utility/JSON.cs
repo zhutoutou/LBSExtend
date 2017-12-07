@@ -9,8 +9,9 @@ using System.Collections.Generic;
 using System.Runtime.Serialization.Json;
 using System.IO;
 using System.Text;
+using System.Xml.Linq;
 
-namespace ZIT.EMERGENCY.Utility
+namespace ZIT.LBSExtend.Utility
 {
     /// <summary>
     ///JSON 的摘要说明
@@ -65,7 +66,7 @@ namespace ZIT.EMERGENCY.Utility
                     o = System.Convert.ToDateTime(o);
                 }
             }
-            else if (o is JObject)
+            else if (o is XObject)
             {
                 JObject jo = o as JObject;
 

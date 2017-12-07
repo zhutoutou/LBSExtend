@@ -1,10 +1,8 @@
 ﻿using System;
-using ZIT.EMERGENCY.Utility;
-using ZIT.EMERGENCY.Controller.BusinessServer;
-using ZIT.EMERGENCY.Controller.DataAnalysis;
-using ZIT.LOG;
+using ZIT.LBSExtend.Utility;
+using ZIT.LBSExtend.Controller.BusinessServer;
 
-namespace ZIT.EMERGENCY.Controller
+namespace ZIT.LBSExtend.Controller
 {
     /// <summary>
     /// 核心服务类
@@ -28,13 +26,8 @@ namespace ZIT.EMERGENCY.Controller
 
         public event EventHandler<StatusEventArgs> DBRConnectStatusChanged;
 
-        public GServer gs;
+        public BSSServer bs;
 
-        internal ConnectTestLocal CTL;
-
-        internal ConnectTestRemote CTR;
-
-        internal SendNewInfo SN;
 
         /// <summary>
         /// 获取当前类实例
@@ -54,14 +47,10 @@ namespace ZIT.EMERGENCY.Controller
         /// </summary>
         private CoreService()
         {
-            gs = new GServer();
-            gs.strRemoteIP = SysParameters.GServerIP;
-            gs.nLocalPort = SysParameters.GLocalPort;
-            CTL = new ConnectTestLocal();
-            CTR = new ConnectTestRemote();
-            SN = new SendNewInfo();
-
-
+            bs = new BSSServer();
+            bs.strRemoteIP = SysParameters.BSSServerIP;
+            bs.nRemotePort = SysParameters.BSSServerPort;
+            bs.nLocalPort = SysParameters.BSSLocalPort;
         }
 
         /// <summary>
@@ -72,26 +61,10 @@ namespace ZIT.EMERGENCY.Controller
             try
             {
                 //UDP连接120业务服务器
-                gs.ConnectionStatusChanged += BusnessServer_StatusChanged;
-                gs.Start();
+                bs.ConnectionStatusChanged += BusnessServer_StatusChanged;
+                bs.Start();
             }
-            catch (Exception ex) { LOG.LogHelper.WriteLog("UDP业务服务器启动失败", ex); }
-
-            //启动数据库连接检测线程
-            CTL.ConnectionStatusChanged += DBLConnect_StatusChanged;
-            CTL.Start();
-            LogHelper.WriteLog("本地数据库连接检测线程已启动");
-
-
-            //启动数据库连接检测线程
-            CTR.ConnectionStatusChanged += DBRConnect_StatusChanged;
-            CTR.Start();
-            LogHelper.WriteLog("对方数据库连接检测线程已启动");
-
-            //启动SendNewInfo数据库析服务
-            SN.Start();
-            LogHelper.WriteLog("SendNewInfo数据库析服务已启动");
-            
+            catch (Exception ex) { LogUtility.DataLog.WriteLog(LogUtility.LogLevel.Info,ex.Message,new LogUtility.RunningPlace("CoreService","StartService"),"业务异常"); }        
         }
 
         /// <summary>
@@ -99,7 +72,7 @@ namespace ZIT.EMERGENCY.Controller
         /// </summary>
         public void StopService()
         {
-            gs.Stop();
+            bs.Stop();
         }
 
         private void BusnessServer_StatusChanged(object sender, StatusEventArgs e)
