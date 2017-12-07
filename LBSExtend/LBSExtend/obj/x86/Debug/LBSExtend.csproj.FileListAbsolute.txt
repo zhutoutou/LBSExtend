@@ -16,3 +16,22 @@ D:\Code\LBSExtend\LBSExtend\LBSExtend\bin\Debug\Model.pdb
 D:\Code\LBSExtend\LBSExtend\LBSExtend\bin\Debug\Utility.pdb
 D:\Code\LBSExtend\LBSExtend\LBSExtend\obj\x86\Debug\LBSExtend.exe
 D:\Code\LBSExtend\LBSExtend\LBSExtend\obj\x86\Debug\LBSExtend.pdb
+F:\Work Space\LBSExtend\LBSExtend\LBSExtend\bin\Debug\LBSExtend.exe.config
+F:\Work Space\LBSExtend\LBSExtend\LBSExtend\bin\Debug\LBSExtend.exe
+F:\Work Space\LBSExtend\LBSExtend\LBSExtend\bin\Debug\LBSExtend.pdb
+F:\Work Space\LBSExtend\LBSExtend\LBSExtend\bin\Debug\Controller.dll
+F:\Work Space\LBSExtend\LBSExtend\LBSExtend\bin\Debug\LogUtility.dll
+F:\Work Space\LBSExtend\LBSExtend\LBSExtend\bin\Debug\Model.dll
+F:\Work Space\LBSExtend\LBSExtend\LBSExtend\bin\Debug\Utility.dll
+F:\Work Space\LBSExtend\LBSExtend\LBSExtend\bin\Debug\Newtonsoft.Json.dll
+F:\Work Space\LBSExtend\LBSExtend\LBSExtend\bin\Debug\Controller.pdb
+F:\Work Space\LBSExtend\LBSExtend\LBSExtend\bin\Debug\Model.pdb
+F:\Work Space\LBSExtend\LBSExtend\LBSExtend\bin\Debug\Utility.pdb
+F:\Work Space\LBSExtend\LBSExtend\LBSExtend\obj\x86\Debug\LBSExtend.csprojResolveAssemblyReference.cache
+F:\Work Space\LBSExtend\LBSExtend\LBSExtend\obj\x86\Debug\ZIT.LBSExtend.UI.frmAbout.resources
+F:\Work Space\LBSExtend\LBSExtend\LBSExtend\obj\x86\Debug\ZIT.LBSExtend.UI.MainUI.resources
+F:\Work Space\LBSExtend\LBSExtend\LBSExtend\obj\x86\Debug\ZIT.LBSExtend.UI.Properties.Resources.resources
+F:\Work Space\LBSExtend\LBSExtend\LBSExtend\obj\x86\Debug\LBSExtend.csproj.GenerateResource.Cache
+F:\Work Space\LBSExtend\LBSExtend\LBSExtend\obj\x86\Debug\LBSExtend.csproj.CoreCompileInputs.cache
+F:\Work Space\LBSExtend\LBSExtend\LBSExtend\obj\x86\Debug\LBSExtend.exe
+F:\Work Space\LBSExtend\LBSExtend\LBSExtend\obj\x86\Debug\LBSExtend.pdb

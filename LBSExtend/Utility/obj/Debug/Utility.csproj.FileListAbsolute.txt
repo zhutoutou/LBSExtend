@@ -6,3 +6,13 @@ D:\Code\LBSExtend\LBSExtend\Utility\bin\Debug\Model.pdb
 D:\Code\LBSExtend\LBSExtend\Utility\obj\Debug\Utility.csprojResolveAssemblyReference.cache
 D:\Code\LBSExtend\LBSExtend\Utility\obj\Debug\Utility.dll
 D:\Code\LBSExtend\LBSExtend\Utility\obj\Debug\Utility.pdb
+F:\Work Space\LBSExtend\LBSExtend\Utility\bin\Debug\Utility.dll
+F:\Work Space\LBSExtend\LBSExtend\Utility\bin\Debug\Utility.pdb
+F:\Work Space\LBSExtend\LBSExtend\Utility\bin\Debug\LogUtility.dll
+F:\Work Space\LBSExtend\LBSExtend\Utility\bin\Debug\Model.dll
+F:\Work Space\LBSExtend\LBSExtend\Utility\bin\Debug\Newtonsoft.Json.dll
+F:\Work Space\LBSExtend\LBSExtend\Utility\bin\Debug\Model.pdb
+F:\Work Space\LBSExtend\LBSExtend\Utility\obj\Debug\Utility.csprojResolveAssemblyReference.cache
+F:\Work Space\LBSExtend\LBSExtend\Utility\obj\Debug\Utility.csproj.CoreCompileInputs.cache
+F:\Work Space\LBSExtend\LBSExtend\Utility\obj\Debug\Utility.dll
+F:\Work Space\LBSExtend\LBSExtend\Utility\obj\Debug\Utility.pdb

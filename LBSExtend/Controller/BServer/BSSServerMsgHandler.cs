@@ -10,14 +10,12 @@ namespace ZIT.LBSExtend.Controller.BusinessServer
 {
     public class BSSServerMsgHandler
     {
-        /// <summary>
-        /// WebService代理类
-        /// </summary>
+        public delegate string LBSRequestHandler(LBSRequest lbr);
 
         private static string _TH="";
+
         public BSSServerMsgHandler()
         {
-           
         }
 
         public void HandleMsg(string strMsg)
@@ -47,28 +45,43 @@ namespace ZIT.LBSExtend.Controller.BusinessServer
 
         private void Handle6201Message(string strMsg)
         {
-            string strLSH = GetValueByKey(strMsg, "LSH");
-            _TH = GetValueByKey(strMsg, "TH");
-            string strSJ = GetValueByKey(strMsg, "SJ");
-            LBSRequest lbr = new LBSRequest() { LSH = strLSH, Phone = strSJ, Name = "" };
-            LBSRequestHandler handler = new LBSRequestHandler(LBSRequest);
-            IAsyncResult result = handler.BeginInvoke(lbr, new AsyncCallback(NoticeLBSResponse), null);
+            try
+            {
+                string strLSH = GetValueByKey(strMsg, "LSH");
+                _TH = GetValueByKey(strMsg, "TH");
+                string strSJ = GetValueByKey(strMsg, "SJ");
+                if (string.IsNullOrEmpty(strLSH) || string.IsNullOrEmpty(strSJ))
+                {
+                    LogUtility.DataLog.WriteLog(LogUtility.LogLevel.Info, "定位请求信息的流水号或者电话号码为空，格式不正确。", new LogUtility.RunningPlace("BSSServerMsgHandler", "Handle6201Message"), "业务运行信息");
+                }
+                LogUtility.DataLog.WriteLog(LogUtility.LogLevel.Info, "定位请求开始，request：" + strMsg, new LogUtility.RunningPlace("BSSServerMsgHandler", "Handle6201Message"), "业务运行信息");
+                LBSRequest lbr = new LBSRequest() { LSH = strLSH, Phone = strSJ, Name = "" };
+                LBSRequestHandler handler = new LBSRequestHandler(LBSRequest);
+                IAsyncResult result = handler.BeginInvoke(lbr, new AsyncCallback(NoticeLBSResponse), null);
+            }
+            catch (Exception ex)
+            {
+                LogUtility.DataLog.WriteLog(LogUtility.LogLevel.Info, ex.Message, new LogUtility.RunningPlace("BSSServerMsgHandler", "Handle6201Message"), "业务异常");
+            }
         }
 
-        public delegate string LBSRequestHandler(LBSRequest lbr);
+    
 
         public string LBSRequest(LBSRequest lbr)
         {
-            string reponse ="";
+            string response ="";
             try
             {
+                string request = JSON.ObjectToJson(lbr);
+                response = WebServiceHelper.InvokeWebService(SysParameters.LBSUrl,"LocationRequest", new object []{ request }).ToString();
+                LogUtility.DataLog.WriteLog(LogUtility.LogLevel.Info, "定位请求返回，response：" + response, new LogUtility.RunningPlace("BSSServerMsgHandler", "LBSRequest"), "业务运行信息");
 
             }
             catch (Exception ex)
             {
                 LogUtility.DataLog.WriteLog(LogUtility.LogLevel.Info, ex.Message, new LogUtility.RunningPlace("BSSServerMsgHandler", "LBSRequest"), "业务异常");
             }
-            return reponse;
+            return response;
         }
 
         private void NoticeLBSResponse(IAsyncResult result)

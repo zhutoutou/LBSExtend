@@ -2,3 +2,8 @@ D:\Code\LBSExtend\LBSExtend\Model\bin\Debug\Model.dll
 D:\Code\LBSExtend\LBSExtend\Model\bin\Debug\Model.pdb
 D:\Code\LBSExtend\LBSExtend\Model\obj\Debug\Model.dll
 D:\Code\LBSExtend\LBSExtend\Model\obj\Debug\Model.pdb
+F:\Work Space\LBSExtend\LBSExtend\Model\bin\Debug\Model.dll
+F:\Work Space\LBSExtend\LBSExtend\Model\bin\Debug\Model.pdb
+F:\Work Space\LBSExtend\LBSExtend\Model\obj\Debug\Model.csproj.CoreCompileInputs.cache
+F:\Work Space\LBSExtend\LBSExtend\Model\obj\Debug\Model.dll
+F:\Work Space\LBSExtend\LBSExtend\Model\obj\Debug\Model.pdb

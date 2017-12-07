@@ -20,6 +20,8 @@ namespace ZIT.LBSExtend.Utility
 
             InsertInterval = short.Parse(ConfigurationManager.AppSettings["InsertInterval"]);
             LocalUnitCode = ConfigurationManager.AppSettings["LocalUnitCode"];
+
+            LBSUrl = ConfigurationManager.AppSettings["LBSUrl"];
         }
         /// <summary>
         /// 软件的名称
@@ -49,5 +51,7 @@ namespace ZIT.LBSExtend.Utility
         /// 与各服务器握手时间间隔，单位：秒
         /// </summary>
         public static int SharkHandsInterval;// = 5
+
+        public static string LBSUrl { get; set; }
     }
 }

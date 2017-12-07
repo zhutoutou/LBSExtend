@@ -9,3 +9,15 @@ D:\Code\LBSExtend\LBSExtend\Controller\bin\Debug\Model.pdb
 D:\Code\LBSExtend\LBSExtend\Controller\bin\Debug\Utility.pdb
 D:\Code\LBSExtend\LBSExtend\Controller\obj\Debug\Controller.dll
 D:\Code\LBSExtend\LBSExtend\Controller\obj\Debug\Controller.pdb
+F:\Work Space\LBSExtend\LBSExtend\Controller\bin\Debug\Controller.dll
+F:\Work Space\LBSExtend\LBSExtend\Controller\bin\Debug\Controller.pdb
+F:\Work Space\LBSExtend\LBSExtend\Controller\bin\Debug\LogUtility.dll
+F:\Work Space\LBSExtend\LBSExtend\Controller\bin\Debug\Model.dll
+F:\Work Space\LBSExtend\LBSExtend\Controller\bin\Debug\Utility.dll
+F:\Work Space\LBSExtend\LBSExtend\Controller\bin\Debug\Newtonsoft.Json.dll
+F:\Work Space\LBSExtend\LBSExtend\Controller\bin\Debug\Model.pdb
+F:\Work Space\LBSExtend\LBSExtend\Controller\bin\Debug\Utility.pdb
+F:\Work Space\LBSExtend\LBSExtend\Controller\obj\Debug\Controller.csprojResolveAssemblyReference.cache
+F:\Work Space\LBSExtend\LBSExtend\Controller\obj\Debug\Controller.csproj.CoreCompileInputs.cache
+F:\Work Space\LBSExtend\LBSExtend\Controller\obj\Debug\Controller.dll
+F:\Work Space\LBSExtend\LBSExtend\Controller\obj\Debug\Controller.pdb
