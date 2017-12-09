@@ -232,8 +232,8 @@ namespace ZIT.LBSExtend.Controller.BusinessServer
                     MsgMutex.WaitOne();
                     try
                     {
-                        int StartIndex = strRecvMsg.IndexOf("(");
-                        int EndIndex = strRecvMsg.IndexOf(")");
+                        int StartIndex = strRecvMsg.IndexOf("[");
+                        int EndIndex = strRecvMsg.IndexOf("]");
 
                         if (StartIndex >= 0 && EndIndex >= 1)
                         {
@@ -287,7 +287,7 @@ namespace ZIT.LBSExtend.Controller.BusinessServer
                     if (udpClient != null)
                     {
                         string str = "[3000DWBH:" + SysParameters.LocalUnitCode + "*#DWMC:*#ZJM:" + GetZJM() + "*#TLX:LBS*#TH:1*#ZBY:*#ZT:1*#LSH:*#ZBBC:*#]";
-                        SendMessage(str);
+                        SendMessage(str,false);
                     }
                     else
                     {
@@ -328,7 +328,7 @@ namespace ZIT.LBSExtend.Controller.BusinessServer
         /// 发给消息给120业务服务器
         /// </summary>
         /// <param name="strMsg"></param>
-        public void SendMessage(string strMsg)
+        public void SendMessage(string strMsg,bool isLog = true)
         {
             try
             {
@@ -338,7 +338,10 @@ namespace ZIT.LBSExtend.Controller.BusinessServer
                     {
                         Byte[] sendBytes = Encoding.GetEncoding(936).GetBytes(strMsg);
                         udpClient.Send(sendBytes, sendBytes.Length, strRemoteIP, nRemotePort);
-                        LogUtility.DataLog.WriteLog(LogUtility.LogLevel.Info, "Send BSSServer message:" + strMsg, new LogUtility.RunningPlace("BSSServer", "SendMessage"), "SendServer信息");
+                        if (isLog)
+                        {
+                            LogUtility.DataLog.WriteLog(LogUtility.LogLevel.Info, "Send BSSServer message:" + strMsg, new LogUtility.RunningPlace("BSSServer", "SendMessage"), "SendServer信息");
+                        }
                     }
                 }
             }

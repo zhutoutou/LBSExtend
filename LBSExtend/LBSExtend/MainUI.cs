@@ -120,7 +120,7 @@ namespace ZIT.LBSExtend.UI
             {
                 string strLogPath;
                 strLogPath = Directory.GetCurrentDirectory();
-                strLogPath += "\\Log\\";
+                strLogPath += "\\LogDF\\";
                 if (Directory.Exists(strLogPath))
                 {
                     Process.Start("explorer.exe", strLogPath);
@@ -158,7 +158,8 @@ namespace ZIT.LBSExtend.UI
 
         private void btnTest_Click(object sender, EventArgs e)
         {
-         
+            string msg = "[6210SJ:1525181721*#LSH:23131231231*#TH:4*#]";
+            CoreService.GetInstance().bs.MsgHandler.Handle6201Message(msg);
 
         }
     }

@@ -43,7 +43,7 @@ namespace ZIT.LBSExtend.Controller.BusinessServer
             }
         }
 
-        private void Handle6201Message(string strMsg)
+        public void Handle6201Message(string strMsg)
         {
             try
             {
@@ -56,8 +56,16 @@ namespace ZIT.LBSExtend.Controller.BusinessServer
                 }
                 LogUtility.DataLog.WriteLog(LogUtility.LogLevel.Info, "定位请求开始，request：" + strMsg, new LogUtility.RunningPlace("BSSServerMsgHandler", "Handle6201Message"), "业务运行信息");
                 LBSRequest lbr = new LBSRequest() { LSH = strLSH, Phone = strSJ, Name = "" };
-                LBSRequestHandler handler = new LBSRequestHandler(LBSRequest);
-                IAsyncResult result = handler.BeginInvoke(lbr, new AsyncCallback(NoticeLBSResponse), null);
+                if (SysParameters.InvokeMothed == "Direct")
+                {
+                    LBSRequestHandler handler = new LBSRequestHandler(LBSRequestDir);
+                    IAsyncResult result = handler.BeginInvoke(lbr, new AsyncCallback(NoticeLBSResponseDir), null);
+                }
+                else
+                {
+                    LBSRequestHandler handler = new LBSRequestHandler(LBSRequestInDir);
+                    IAsyncResult result = handler.BeginInvoke(lbr, new AsyncCallback(NoticeLBSResponseInDir), null);
+                }
             }
             catch (Exception ex)
             {
@@ -65,15 +73,62 @@ namespace ZIT.LBSExtend.Controller.BusinessServer
             }
         }
 
-    
 
-        public string LBSRequest(LBSRequest lbr)
+
+        
+
+        public string LBSRequestDir(LBSRequest lbr)
         {
-            string response ="";
+            string response = "";
+            try
+            {
+                LOCATEREQUEST loc = new LOCATEREQUEST() {
+                    SEQ = lbr.LSH,
+                    ACCOUNT = SysParameters.ACCOUNT,
+                    PASSWORD = SysParameters.PASSWORD,
+                    MOBILE =lbr.Phone,
+                    CITYNUMBER = SysParameters.CITYNUMBER,
+                    AREANUMBER = SysParameters.AREANUMBER,
+                };
+                string request = XMLHelper.Serializer<LOCATEREQUEST>(loc);
+                response = WebServiceHelper.InvokeWebService(SysParameters.LBSUrl, "location", new object[] { request }).ToString();
+                LogUtility.DataLog.WriteLog(LogUtility.LogLevel.Info, "定位请求返回，response：" + response, new LogUtility.RunningPlace("BSSServerMsgHandler", "LBSRequest"), "业务运行信息");
+
+            }
+            catch (Exception ex)
+            {
+                LogUtility.DataLog.WriteLog(LogUtility.LogLevel.Info, ex.Message, new LogUtility.RunningPlace("BSSServerMsgHandler", "LBSRequest"), "业务异常");
+            }
+            return response;
+        }
+        private void NoticeLBSResponseDir(IAsyncResult result)
+        {
+            try
+            {
+                LBSRequestHandler handler = (LBSRequestHandler)((AsyncResult)result).AsyncDelegate;
+                string reponse = handler.EndInvoke(result);
+                RESPONSE lbr = new RESPONSE();
+                string strTH = _TH;
+                lbr = (RESPONSE)JSON.JsonToObject(reponse, lbr);
+                if (lbr != null)
+                {
+                    string msg = "[6202LSH:"+ lbr.SEQ +"*#SJ:" + lbr.REQ_PHONE + "*#TLX:LBS*#TH:" + strTH + "*#WD:" + lbr.LAT + "*#JD:" + lbr.LNG + "*#ERRCODE:" + lbr.RESULTCODE + "*#ERRMSG:" + lbr.RESULTDESC + "*#]";
+                    CoreService.GetInstance().bs.SendMessage(msg);
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
+        }
+
+        public string LBSRequestInDir(LBSRequest lbr)
+        {
+            string response = "";
             try
             {
                 string request = JSON.ObjectToJson(lbr);
-                response = WebServiceHelper.InvokeWebService(SysParameters.LBSUrl,"LocationRequest", new object []{ request }).ToString();
+                response = WebServiceHelper.InvokeWebService(SysParameters.LBSUrl, "RequestLocation", new object[] { request }).ToString();
                 LogUtility.DataLog.WriteLog(LogUtility.LogLevel.Info, "定位请求返回，response：" + response, new LogUtility.RunningPlace("BSSServerMsgHandler", "LBSRequest"), "业务运行信息");
 
             }
@@ -84,7 +139,7 @@ namespace ZIT.LBSExtend.Controller.BusinessServer
             return response;
         }
 
-        private void NoticeLBSResponse(IAsyncResult result)
+        private void NoticeLBSResponseInDir(IAsyncResult result)
         {
             try
             {
@@ -95,7 +150,7 @@ namespace ZIT.LBSExtend.Controller.BusinessServer
                 lbr = (LBSResponse)JSON.JsonToObject(reponse, lbr);
                 if (lbr != null)
                 {
-                    string msg = "[6202SJ:" + lbr.Phone + "*#TLX:LBS*#TH:" + strTH + "*#WD:" + lbr.WD + "*#JD:" + lbr.JD + "*#ERRCODE:" + lbr.ErrorCode + "*#ERRMSG:" + lbr.ErrorMsg + "*#]";
+                    string msg = "[6202LSH:" + lbr.LSH + "*#SJ:" + lbr.Phone + "*#TLX:LBS*#TH:" + strTH + "*#WD:" + lbr.WD + "*#JD:" + lbr.JD + "*#ERRCODE:" + lbr.ErrorCode + "*#ERRMSG:" + lbr.ErrorMsg + "*#]";
                     CoreService.GetInstance().bs.SendMessage(msg);
                 }
             }

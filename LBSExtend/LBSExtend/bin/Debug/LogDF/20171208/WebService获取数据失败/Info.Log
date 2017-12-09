@@ -1,0 +1,20 @@
+﻿日志时间:2017-12-08 17:36:03
+日志级别:Info
+日志位置:类[WebServiceHelper],方法[InvokeWebService]
+日志内容:找不到 http://ws.weizhi.com/:EmergencyLocation 的定义。缺少命名空间为 http://ws.weizhi.com/ 的服务说明。
+参数名: name--System.Web.Services--http://218.17.142.19:10180/emergency/ws/emergencyLocationlocation--<?xml version="1.0"?>
+<LOCATEREQUEST xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <SEQ>23131231231</SEQ>
+  <ACCOUNT>sys_sys</ACCOUNT>
+  <PASSWORD>123456</PASSWORD>
+  <MOBILE>1525181721</MOBILE>
+  <CITYNUMBER>0758</CITYNUMBER>
+  <AREANUMBER>441624</AREANUMBER>
+</LOCATEREQUEST>,
+
+日志时间:2017-12-08 17:53:01
+日志级别:Info
+日志位置:类[WebServiceHelper],方法[InvokeWebService]
+日志内容:找不到 http://ws.weizhi.com/:EmergencyLocation 的定义。缺少命名空间为 http://ws.weizhi.com/ 的服务说明。
+参数名: name--System.Web.Services--http://218.17.142.19:10180/emergency/ws/emergencyLocationlocation--<LOCATEREQUEST>         <SEQ>2017120800000000118</SEQ>         <ACCOUNT>sys_sys</ACCOUNT>         <PASSWORD>123456</PASSWORD>         <MOBILE>18923701334</MOBILE>          <CITYNUMBER>0758</CITYNUMBER>         <AREANUMBER>441624</AREANUMBER>        </LOCATEREQUEST>,
+

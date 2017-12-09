@@ -16,3 +16,4 @@ F:\Work Space\LBSExtend\LBSExtend\Utility\obj\Debug\Utility.csprojResolveAssembl
 F:\Work Space\LBSExtend\LBSExtend\Utility\obj\Debug\Utility.csproj.CoreCompileInputs.cache
 F:\Work Space\LBSExtend\LBSExtend\Utility\obj\Debug\Utility.dll
 F:\Work Space\LBSExtend\LBSExtend\Utility\obj\Debug\Utility.pdb
+D:\Code\LBSExtend\LBSExtend\Utility\bin\Debug\LogUtility.dll
