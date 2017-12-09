@@ -1,0 +1,35 @@
+﻿日志时间:2017-12-08 10:44:40
+日志级别:Info
+日志位置:类[BSSServerMsgHandler],方法[Handle6201Message]
+日志内容:定位请求开始，request：[6201SJ:15251551531*#LSH:20170000991*#TH:4*#]
+
+日志时间:2017-12-08 10:44:48
+日志级别:Info
+日志位置:类[BSSServerMsgHandler],方法[LBSRequest]
+日志内容:定位请求返回，response：{"ErrorCode":"-1","ErrorMsg":"请求格式错误","LSH":"","Phone":"","JD":"","WD":"","Name":""}
+
+日志时间:2017-12-08 10:45:20
+日志级别:Info
+日志位置:类[BSSServerMsgHandler],方法[Handle6201Message]
+日志内容:定位请求开始，request：[6201SJ:15251551531*#LSH:20170000991*#TH:4*#]
+
+日志时间:2017-12-08 10:45:49
+日志级别:Info
+日志位置:类[BSSServerMsgHandler],方法[LBSRequest]
+日志内容:定位请求返回，response：{"ErrorCode":"-1","ErrorMsg":"请求格式错误","LSH":"","Phone":"","JD":"","WD":"","Name":""}
+
+日志时间:2017-12-08 17:35:53
+日志级别:Info
+日志位置:类[BSSServerMsgHandler],方法[Handle6201Message]
+日志内容:定位请求开始，request：[6210SJ:1525181721*#LSH:23131231231*#TH:4*#]
+
+日志时间:2017-12-08 17:36:17
+日志级别:Info
+日志位置:类[BSSServerMsgHandler],方法[LBSRequest]
+日志内容:定位请求返回，response：
+
+日志时间:2017-12-08 17:52:51
+日志级别:Info
+日志位置:类[BSSServerMsgHandler],方法[Handle6201Message]
+日志内容:定位请求开始，request：[6210SJ:1525181721*#LSH:23131231231*#TH:4*#]
+

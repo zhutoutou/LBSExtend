@@ -141,3 +141,4 @@ F:\Work Space\LBSExtend\LBSExtend\COM\bin\Debug\LogUtility.dll
 F:\Work Space\LBSExtend\LBSExtend\COM\obj\Debug\COM.csproj.CoreCompileInputs.cache
 F:\Work Space\LBSExtend\LBSExtend\COM\obj\Debug\ZIT.Comm.dll
 F:\Work Space\LBSExtend\LBSExtend\COM\obj\Debug\ZIT.Comm.pdb
+D:\Code\LBSExtend\LBSExtend\COM\obj\Debug\COM.csprojResolveAssemblyReference.cache
