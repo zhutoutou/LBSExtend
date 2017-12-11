@@ -23,12 +23,6 @@ namespace ZIT.LBSExtend.Utility
 
             LBSUrl = ConfigurationManager.AppSettings["LBSUrl"];
 
-            ACCOUNT = ConfigurationManager.AppSettings["ACCOUNT"];
-            PASSWORD = ConfigurationManager.AppSettings["PASSWORD"];
-            CITYNUMBER = ConfigurationManager.AppSettings["CITYNUMBER"];
-            AREANUMBER = ConfigurationManager.AppSettings["AREANUMBER"];
-
-            InvokeMothed = ConfigurationManager.AppSettings["InvokeMothed"];
         }
         /// <summary>
         /// 软件的名称
@@ -60,10 +54,5 @@ namespace ZIT.LBSExtend.Utility
         public static int SharkHandsInterval;// = 5
 
         public static string LBSUrl { get; set; }
-        public static string ACCOUNT { get; set; }
-        public static string PASSWORD { get; set; }
-        public static string CITYNUMBER { get; set; }
-        public static string AREANUMBER { get; set; }
-        public static string InvokeMothed { get; set; }
     }
 }
